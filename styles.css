@@ -1,0 +1,37 @@
+.block_twitter .tweets{
+    display: flex;
+    margin: 5px 0 0  0;
+    padding: 0 0  5px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.15); 
+}
+.block_twitter .tweets:last-child{
+    border-bottom: none;
+}
+.block_twitter .img{
+    display: block;
+    padding: 2px;
+    margin-right: 5px;
+}
+.block_twitter .img img{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.block_twitter  .tweets-header {
+    display: block;
+}
+.block_twitter  .tweets-header span{ 
+    display: inline;
+}
+.block_twitter  .tweets-header p,
+.block_twitter  .tweets-header a {
+    display:inline;
+    color: black;
+} 
+.block_twitter  .tweets-header p {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.block_twitter  .tweets-content p {
+    font-size: 1em;
+    margin:0;
+}

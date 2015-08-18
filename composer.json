@@ -1,0 +1,18 @@
+{
+    "name": "tgdesignweb/moodle-block_twitter",
+    "description": "Add a twitter feed block to your moodle installation",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Liam Mann",
+            "email": "liam@liammann.ocm"
+        }
+    ],
+    "type": "moodle-block",
+    "require": {
+      "composer/installers": "~1.0"
+    },
+    "extra": {
+      "installer-name": "twitter"
+    }
+}
