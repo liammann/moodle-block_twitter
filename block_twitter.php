@@ -73,10 +73,16 @@ class block_twitter extends block_base {
 
         foreach (json_decode($this->twitter->get($twitter_url)) as $key => $value) {
             $text .= '<div class="tweets" >';
-            $text .= "<div class='img' ><img src='" . $value->user->profile_image_url . "'></div><div class='tweets-content'><div class='tweets-header'><p><a href='http://twitter.com/" . $value->user->screen_name . "'>" . $value->user->screen_name . "</a></p> ";
+            $text .= "<div class='profile-img' ><img src='" . $value->user->profile_image_url . "'></div><div class='tweets-content'><div class='tweets-header'><p><a href='http://twitter.com/" . $value->user->screen_name . "'>" . $value->user->screen_name . "</a></p> ";
             $date = new DateTime($value->created_at);
             $text .= '<a href="https://twitter.com/'. $screen_name.'/status/'.$value->id.'">'.$date->format('M j').'</a></div>';
             $text .= '<p>'.$this->twitter->linkify_twitter_status($value->text).'</p>';
+            
+            if (isset($value->entities->media)){
+                foreach ($value->entities->media as  $img) {
+                    $text .= '<a class="img" href="' . $img->expanded_url .'"><img width="100%" src="' . $img->media_url. '" >';
+                }
+            }
             $text .= '</div></div>';
         }
 
